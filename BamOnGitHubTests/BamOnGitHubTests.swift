@@ -10,6 +10,8 @@ import XCTest
 @testable import BamOnGitHub
 
 class BamOnGitHubTests: XCTestCase {
+    
+    let config = AppConfig()
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -22,6 +24,12 @@ class BamOnGitHubTests: XCTestCase {
     func testExample() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+    }
+    
+    func test_API_BaseURLString_IsCorrect() {
+        let URLString = config.APIURL
+        let expectedURLString = "https://api.github.com/orgs/bamlab/repos"
+        XCTAssertEqual(URLString, expectedURLString, "URL does not match expected URL. Expected URLs to match.")
     }
 
     func testPerformanceExample() {
