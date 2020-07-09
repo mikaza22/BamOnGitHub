@@ -26,20 +26,56 @@ class HomeViewController: UIViewController {
      */
     var repositories: [GitHubRepository] = []
     
+    /**
+     Pull to refresh
+     */
+    lazy var refreshControl: UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action:
+            #selector(self.handleRefresh(_:)),
+                                 for: UIControl.Event.valueChanged)
+        refreshControl.tintColor = #colorLiteral(red: 0.2156862745, green: 0.5529411765, blue: 0.1960784314, alpha: 1)
+        
+        return refreshControl
+    }()
+    
     // MARK: - overrided functions
     override func viewDidLoad() {
         super.viewDidLoad()
         self.repositoryListTableView.dataSource = self
-        api.getRepositories() { (data: [GitHubRepository]) in
-            self.repositories = data
-            DispatchQueue.main.async {
-                self.repositoryListTableView.reloadData()
-            }
-        }
+        self.repositoryListTableView.refreshControl = refreshControl
+        self.getRepositoryList()
     }
     
     // MARK: - HomeViewController functions
     
+    func getRepositoryList() {
+        api.getRepositories() { (data: [GitHubRepository], error: Error?) in
+            if error == nil {
+                self.repositories = data
+                DispatchQueue.main.async {
+                    self.refreshControl.endRefreshing()
+                    self.repositoryListTableView.reloadData()
+                }
+            } else {
+                DispatchQueue.main.async {
+                    let ErrorAlert = UIAlertController(title: "Can't retrieve repositories", message: error?.localizedDescription, preferredStyle: UIAlertController.Style.alert)
+                    
+                    let dismiss = UIAlertAction(title: "OK", style: UIAlertAction.Style.cancel, handler: nil)
+                    
+                    ErrorAlert .addAction(dismiss)
+                    
+                    self.present(ErrorAlert , animated: true) {
+                        self.refreshControl.endRefreshing()
+                    }
+                }
+            }
+        }
+    }
+    
+    @objc private func handleRefresh(_ sender: Any) {
+        self.getRepositoryList()
+    }
     /**
      * Open selected repository
      - Parameter sender: Link Button
