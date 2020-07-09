@@ -17,6 +17,10 @@
 		C9A95C5B24B73FBB0039C6DF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9A95C5924B73FBB0039C6DF /* LaunchScreen.storyboard */; };
 		C9A95C6624B73FBB0039C6DF /* BamOnGitHubTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A95C6524B73FBB0039C6DF /* BamOnGitHubTests.swift */; };
 		C9A95C7124B73FBB0039C6DF /* BamOnGitHubUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A95C7024B73FBB0039C6DF /* BamOnGitHubUITests.swift */; };
+		C9A95C9024B744CD0039C6DF /* Owner.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A95C8C24B744CC0039C6DF /* Owner.swift */; };
+		C9A95C9124B744CD0039C6DF /* License.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A95C8D24B744CC0039C6DF /* License.swift */; };
+		C9A95C9224B744CD0039C6DF /* GitHubRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A95C8E24B744CC0039C6DF /* GitHubRepository.swift */; };
+		C9A95C9324B744CD0039C6DF /* Permissions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A95C8F24B744CD0039C6DF /* Permissions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +57,10 @@
 		C9A95C6C24B73FBB0039C6DF /* BamOnGitHubUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BamOnGitHubUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9A95C7024B73FBB0039C6DF /* BamOnGitHubUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BamOnGitHubUITests.swift; sourceTree = "<group>"; };
 		C9A95C7224B73FBB0039C6DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C9A95C8C24B744CC0039C6DF /* Owner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Owner.swift; sourceTree = "<group>"; };
+		C9A95C8D24B744CC0039C6DF /* License.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = License.swift; sourceTree = "<group>"; };
+		C9A95C8E24B744CC0039C6DF /* GitHubRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubRepository.swift; sourceTree = "<group>"; };
+		C9A95C8F24B744CD0039C6DF /* Permissions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Permissions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,10 +111,11 @@
 		C9A95C4824B73FBA0039C6DF /* BamOnGitHub */ = {
 			isa = PBXGroup;
 			children = (
+				C9A95C9424B7459B0039C6DF /* Utils */,
+				C9A95C8B24B744B50039C6DF /* Controller */,
+				C9A95C8A24B744A70039C6DF /* Model */,
 				C9A95C4924B73FBA0039C6DF /* AppDelegate.swift */,
 				C9A95C4B24B73FBA0039C6DF /* SceneDelegate.swift */,
-				C9A95C4D24B73FBA0039C6DF /* FirstViewController.swift */,
-				C9A95C4F24B73FBA0039C6DF /* SecondViewController.swift */,
 				C9A95C5124B73FBA0039C6DF /* Main.storyboard */,
 				C9A95C5724B73FBB0039C6DF /* Assets.xcassets */,
 				C9A95C5924B73FBB0039C6DF /* LaunchScreen.storyboard */,
@@ -132,6 +141,33 @@
 				C9A95C7224B73FBB0039C6DF /* Info.plist */,
 			);
 			path = BamOnGitHubUITests;
+			sourceTree = "<group>";
+		};
+		C9A95C8A24B744A70039C6DF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C9A95C8E24B744CC0039C6DF /* GitHubRepository.swift */,
+				C9A95C8D24B744CC0039C6DF /* License.swift */,
+				C9A95C8C24B744CC0039C6DF /* Owner.swift */,
+				C9A95C8F24B744CD0039C6DF /* Permissions.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C9A95C8B24B744B50039C6DF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C9A95C4D24B73FBA0039C6DF /* FirstViewController.swift */,
+				C9A95C4F24B73FBA0039C6DF /* SecondViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		C9A95C9424B7459B0039C6DF /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -265,8 +301,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9A95C9124B744CD0039C6DF /* License.swift in Sources */,
 				C9A95C5624B73FBA0039C6DF /* BamOnGitHub.xcdatamodeld in Sources */,
+				C9A95C9024B744CD0039C6DF /* Owner.swift in Sources */,
 				C9A95C5024B73FBA0039C6DF /* SecondViewController.swift in Sources */,
+				C9A95C9324B744CD0039C6DF /* Permissions.swift in Sources */,
+				C9A95C9224B744CD0039C6DF /* GitHubRepository.swift in Sources */,
 				C9A95C4E24B73FBA0039C6DF /* FirstViewController.swift in Sources */,
 				C9A95C4A24B73FBA0039C6DF /* AppDelegate.swift in Sources */,
 				C9A95C4C24B73FBA0039C6DF /* SceneDelegate.swift in Sources */,
