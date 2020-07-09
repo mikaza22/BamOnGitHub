@@ -23,6 +23,7 @@
 		C9A95C9324B744CD0039C6DF /* Permissions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A95C8F24B744CD0039C6DF /* Permissions.swift */; };
 		C9A95C9624B746930039C6DF /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A95C9524B746930039C6DF /* APIClient.swift */; };
 		C9A95C9824B746B10039C6DF /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A95C9724B746B10039C6DF /* Config.swift */; };
+		C9A95C9B24B74C7F0039C6DF /* RepositoryListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A95C9A24B74C7F0039C6DF /* RepositoryListTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		C9A95C8F24B744CD0039C6DF /* Permissions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Permissions.swift; sourceTree = "<group>"; };
 		C9A95C9524B746930039C6DF /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		C9A95C9724B746B10039C6DF /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		C9A95C9A24B74C7F0039C6DF /* RepositoryListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryListTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +164,7 @@
 		C9A95C8B24B744B50039C6DF /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				C9A95C9924B74C160039C6DF /* Cells */,
 				C9A95C4D24B73FBA0039C6DF /* HomeViewController.swift */,
 				C9A95C4F24B73FBA0039C6DF /* FavViewController.swift */,
 			);
@@ -174,6 +177,14 @@
 				C9A95C9524B746930039C6DF /* APIClient.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		C9A95C9924B74C160039C6DF /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				C9A95C9A24B74C7F0039C6DF /* RepositoryListTableViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -310,6 +321,7 @@
 				C9A95C9124B744CD0039C6DF /* License.swift in Sources */,
 				C9A95C5624B73FBA0039C6DF /* BamOnGitHub.xcdatamodeld in Sources */,
 				C9A95C9024B744CD0039C6DF /* Owner.swift in Sources */,
+				C9A95C9B24B74C7F0039C6DF /* RepositoryListTableViewCell.swift in Sources */,
 				C9A95C9624B746930039C6DF /* APIClient.swift in Sources */,
 				C9A95C9824B746B10039C6DF /* Config.swift in Sources */,
 				C9A95C5024B73FBA0039C6DF /* FavViewController.swift in Sources */,

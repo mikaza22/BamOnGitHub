@@ -10,29 +10,68 @@
         <!--Home-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
-                <viewController id="9pv-A4-QxB" customClass="HomeViewContoller" sceneMemberID="viewController">
+                <viewController id="9pv-A4-QxB" customClass="HomeViewController" customModule="BamOnGitHub" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="First View" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="KQZ-1w-vlD">
-                                <rect key="frame" x="131.5" y="426.5" width="151" height="43"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="GsN-uI-6lu">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loaded by FirstViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A5M-7J-77L">
-                                <rect key="frame" x="110" y="477.5" width="194.5" height="17"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="repositoryListCell" id="ALl-0L-l3e" customClass="RepositoryListTableViewCell" customModule="BamOnGitHub" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="22.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ALl-0L-l3e" id="8xW-4V-uwZ">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="22.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sb4-Mu-jPg">
+                                                    <rect key="frame" x="10" y="0.0" width="394" height="22.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Repository name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ovU-eY-vaX">
+                                                            <rect key="frame" x="0.0" y="0.0" width="246.5" height="22.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eSI-Bl-Yuj">
+                                                            <rect key="frame" x="246.5" y="0.0" width="73.5" height="22.5"/>
+                                                            <state key="normal" image="eye" catalog="system"/>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lmV-bf-Sjv">
+                                                            <rect key="frame" x="320" y="0.0" width="74" height="22.5"/>
+                                                            <state key="normal" image="star" catalog="system"/>
+                                                        </button>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="lmV-bf-Sjv" firstAttribute="width" secondItem="eSI-Bl-Yuj" secondAttribute="width" id="ZFB-xk-c57"/>
+                                                        <constraint firstItem="eSI-Bl-Yuj" firstAttribute="width" secondItem="ovU-eY-vaX" secondAttribute="width" multiplier="0.3" id="c4u-yR-tAy"/>
+                                                    </constraints>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="sb4-Mu-jPg" secondAttribute="trailing" constant="10" id="Jgq-Te-pf2"/>
+                                                <constraint firstItem="sb4-Mu-jPg" firstAttribute="leading" secondItem="8xW-4V-uwZ" secondAttribute="leading" constant="10" id="QYQ-BV-1MA"/>
+                                                <constraint firstAttribute="bottom" secondItem="sb4-Mu-jPg" secondAttribute="bottom" id="fh0-mh-caw"/>
+                                                <constraint firstItem="sb4-Mu-jPg" firstAttribute="top" secondItem="8xW-4V-uwZ" secondAttribute="top" id="zT3-ze-hKH"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="repositoryFavButton" destination="lmV-bf-Sjv" id="QFp-2l-Wia"/>
+                                            <outlet property="repositoryLinkButton" destination="eSI-Bl-Yuj" id="PYW-Ke-qBD"/>
+                                            <outlet property="repositoryNameLabel" destination="ovU-eY-vaX" id="T1r-x7-kpK"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="KQZ-1w-vlD" secondAttribute="centerX" id="6BV-lF-sBN"/>
-                            <constraint firstItem="A5M-7J-77L" firstAttribute="top" secondItem="KQZ-1w-vlD" secondAttribute="bottom" constant="8" symbolic="YES" id="cfb-er-3JN"/>
-                            <constraint firstItem="A5M-7J-77L" firstAttribute="centerX" secondItem="KQZ-1w-vlD" secondAttribute="centerX" id="e1l-AV-tCB"/>
-                            <constraint firstAttribute="centerY" secondItem="KQZ-1w-vlD" secondAttribute="centerY" id="exm-UA-ej4"/>
+                            <constraint firstItem="GsN-uI-6lu" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" id="AYA-Oy-VQx"/>
+                            <constraint firstItem="PQr-Ze-W5v" firstAttribute="bottom" secondItem="GsN-uI-6lu" secondAttribute="bottom" id="SN5-Xq-d6O"/>
+                            <constraint firstItem="GsN-uI-6lu" firstAttribute="top" secondItem="PQr-Ze-W5v" secondAttribute="top" id="cmc-4N-DX7"/>
+                            <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="GsN-uI-6lu" secondAttribute="trailing" id="mJg-78-uZB"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
@@ -97,7 +136,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="eye" catalog="system" width="64" height="40"/>
         <image name="house.fill" catalog="system" width="64" height="52"/>
+        <image name="star" catalog="system" width="64" height="58"/>
         <image name="star.fill" catalog="system" width="64" height="58"/>
     </resources>
 </document>
