@@ -95,7 +95,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" image="house.fill" catalog="system" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="house.fill" catalog="system" id="acW-dT-cKf" userLabel="home">
+                        <attributedString key="userComments">
+                            <fragment content="home1"/>
+                        </attributedString>
+                    </tabBarItem>
                     <connections>
                         <outlet property="repositoryListTableView" destination="GsN-uI-6lu" id="N7J-io-lRC"/>
                     </connections>

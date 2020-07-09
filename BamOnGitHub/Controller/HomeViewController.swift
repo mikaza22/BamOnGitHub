@@ -35,15 +35,19 @@ class HomeViewController: UIViewController {
             #selector(self.handleRefresh(_:)),
                                  for: UIControl.Event.valueChanged)
         refreshControl.tintColor = #colorLiteral(red: 0.2156862745, green: 0.5529411765, blue: 0.1960784314, alpha: 1)
-        
         return refreshControl
     }()
     
     // MARK: - overrided functions
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.repositoryListTableView.dataSource = self
         self.repositoryListTableView.refreshControl = refreshControl
+        self.repositoryListTableView.accessibilityIdentifier = "repositoryList"
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         self.getRepositoryList()
     }
     
@@ -81,7 +85,9 @@ class HomeViewController: UIViewController {
      - Parameter sender: Link Button
      */
     @objc func buttonLinkClicked(sender: UIButton) {
-        print("Button Link clicked")
+        if let link = self.repositories[sender.tag].html_url, let url = URL(string:link)  {
+            UIApplication.shared.open(url)
+        }
     }
     
     /**
@@ -106,9 +112,9 @@ extension HomeViewController: UITableViewDataSource {
         let repository = self.repositories[indexPath.row]
         cell.repositoryNameLabel.text = repository.name
         cell.repositoryLinkButton.addTarget(self, action: #selector(buttonLinkClicked(sender:)), for: .touchUpInside)
+        cell.repositoryLinkButton.tag = indexPath.row
         cell.repositoryFavButton.addTarget(self, action: #selector(buttonFavClicked(sender:)), for: .touchUpInside)
         return cell
-        
     }
 }
 
