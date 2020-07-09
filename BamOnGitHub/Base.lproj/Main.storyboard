@@ -15,19 +15,36 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cLL-AT-pxX">
+                                <rect key="frame" x="0.0" y="44" width="414" height="50"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BAM repositories List on GitHub" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yb1-Do-AoR">
+                                        <rect key="frame" x="61.5" y="13" width="291.5" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="Yb1-Do-AoR" firstAttribute="centerY" secondItem="cLL-AT-pxX" secondAttribute="centerY" id="9ye-y2-iTq"/>
+                                    <constraint firstAttribute="height" constant="50" id="Mhs-nJ-8oY"/>
+                                    <constraint firstItem="Yb1-Do-AoR" firstAttribute="centerX" secondItem="cLL-AT-pxX" secondAttribute="centerX" id="W7d-3n-3pu"/>
+                                </constraints>
+                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="GsN-uI-6lu">
-                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <rect key="frame" x="0.0" y="94" width="414" height="719"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="repositoryListCell" id="ALl-0L-l3e" customClass="RepositoryListTableViewCell" customModule="BamOnGitHub" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="22.5"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="42.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ALl-0L-l3e" id="8xW-4V-uwZ">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="22.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="42.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sb4-Mu-jPg">
-                                                    <rect key="frame" x="10" y="0.0" width="394" height="22.5"/>
+                                                    <rect key="frame" x="10" y="10" width="394" height="22.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Repository name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ovU-eY-vaX">
                                                             <rect key="frame" x="0.0" y="0.0" width="246.5" height="22.5"/>
@@ -53,8 +70,8 @@
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="sb4-Mu-jPg" secondAttribute="trailing" constant="10" id="Jgq-Te-pf2"/>
                                                 <constraint firstItem="sb4-Mu-jPg" firstAttribute="leading" secondItem="8xW-4V-uwZ" secondAttribute="leading" constant="10" id="QYQ-BV-1MA"/>
-                                                <constraint firstAttribute="bottom" secondItem="sb4-Mu-jPg" secondAttribute="bottom" id="fh0-mh-caw"/>
-                                                <constraint firstItem="sb4-Mu-jPg" firstAttribute="top" secondItem="8xW-4V-uwZ" secondAttribute="top" id="zT3-ze-hKH"/>
+                                                <constraint firstAttribute="bottom" secondItem="sb4-Mu-jPg" secondAttribute="bottom" constant="10" id="fh0-mh-caw"/>
+                                                <constraint firstItem="sb4-Mu-jPg" firstAttribute="top" secondItem="8xW-4V-uwZ" secondAttribute="top" constant="10" id="zT3-ze-hKH"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -68,14 +85,20 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="cLL-AT-pxX" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" id="35z-1b-SJm"/>
                             <constraint firstItem="GsN-uI-6lu" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" id="AYA-Oy-VQx"/>
+                            <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="cLL-AT-pxX" secondAttribute="trailing" id="OlU-sp-08n"/>
                             <constraint firstItem="PQr-Ze-W5v" firstAttribute="bottom" secondItem="GsN-uI-6lu" secondAttribute="bottom" id="SN5-Xq-d6O"/>
-                            <constraint firstItem="GsN-uI-6lu" firstAttribute="top" secondItem="PQr-Ze-W5v" secondAttribute="top" id="cmc-4N-DX7"/>
                             <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="GsN-uI-6lu" secondAttribute="trailing" id="mJg-78-uZB"/>
+                            <constraint firstItem="GsN-uI-6lu" firstAttribute="top" secondItem="cLL-AT-pxX" secondAttribute="bottom" id="opO-KW-66M"/>
+                            <constraint firstItem="cLL-AT-pxX" firstAttribute="top" secondItem="PQr-Ze-W5v" secondAttribute="top" id="tyu-yc-OGs"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="house.fill" catalog="system" id="acW-dT-cKf"/>
+                    <connections>
+                        <outlet property="repositoryListTableView" destination="GsN-uI-6lu" id="N7J-io-lRC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
