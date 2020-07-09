@@ -12,7 +12,7 @@ class FavViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        // TODO: retrieve favourites repositories from CoreData and show in a TableView
     }
 
 

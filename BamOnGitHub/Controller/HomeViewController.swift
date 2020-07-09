@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class HomeViewController: UIViewController {
     
@@ -95,7 +96,32 @@ class HomeViewController: UIViewController {
      - Parameter sender: Fav Button
      */
     @objc func buttonFavClicked(sender: UIButton) {
-        print("Button Fav clicked")
+        self.addTofav(index: sender.tag)
+    }
+    
+    /**
+    * Add repository to fav with CoreData
+    - Parameter index: index of the repository selected
+    */
+    func addTofav(index: Int) {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        
+        let managedContext = appDelegate.persistentContainer.viewContext
+        
+        let userEntity = NSEntityDescription.entity(forEntityName: "Fav", in: managedContext)!
+        
+        let fav = NSManagedObject(entity: userEntity, insertInto: managedContext)
+        let repository = self.repositories[index]
+        if let name = repository.name, let link = repository.html_url {
+            fav.setValue(name, forKey: "name")
+            fav.setValue(link, forKey: "link")
+        }
+        do {
+            try managedContext.save()
+           
+        } catch let error as NSError {
+            print("Could not save. \(error), \(error.userInfo)")
+        }
     }
 }
 
@@ -114,6 +140,7 @@ extension HomeViewController: UITableViewDataSource {
         cell.repositoryLinkButton.addTarget(self, action: #selector(buttonLinkClicked(sender:)), for: .touchUpInside)
         cell.repositoryLinkButton.tag = indexPath.row
         cell.repositoryFavButton.addTarget(self, action: #selector(buttonFavClicked(sender:)), for: .touchUpInside)
+        cell.repositoryFavButton.tag = indexPath.row
         return cell
     }
 }
