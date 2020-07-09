@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		C9A95C4A24B73FBA0039C6DF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A95C4924B73FBA0039C6DF /* AppDelegate.swift */; };
 		C9A95C4C24B73FBA0039C6DF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A95C4B24B73FBA0039C6DF /* SceneDelegate.swift */; };
-		C9A95C4E24B73FBA0039C6DF /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A95C4D24B73FBA0039C6DF /* FirstViewController.swift */; };
-		C9A95C5024B73FBA0039C6DF /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A95C4F24B73FBA0039C6DF /* SecondViewController.swift */; };
+		C9A95C4E24B73FBA0039C6DF /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A95C4D24B73FBA0039C6DF /* HomeViewController.swift */; };
+		C9A95C5024B73FBA0039C6DF /* FavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A95C4F24B73FBA0039C6DF /* FavViewController.swift */; };
 		C9A95C5324B73FBA0039C6DF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9A95C5124B73FBA0039C6DF /* Main.storyboard */; };
 		C9A95C5624B73FBA0039C6DF /* BamOnGitHub.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C9A95C5424B73FBA0039C6DF /* BamOnGitHub.xcdatamodeld */; };
 		C9A95C5824B73FBB0039C6DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9A95C5724B73FBB0039C6DF /* Assets.xcassets */; };
@@ -21,6 +21,8 @@
 		C9A95C9124B744CD0039C6DF /* License.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A95C8D24B744CC0039C6DF /* License.swift */; };
 		C9A95C9224B744CD0039C6DF /* GitHubRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A95C8E24B744CC0039C6DF /* GitHubRepository.swift */; };
 		C9A95C9324B744CD0039C6DF /* Permissions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A95C8F24B744CD0039C6DF /* Permissions.swift */; };
+		C9A95C9624B746930039C6DF /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A95C9524B746930039C6DF /* APIClient.swift */; };
+		C9A95C9824B746B10039C6DF /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A95C9724B746B10039C6DF /* Config.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,8 +46,8 @@
 		C9A95C4624B73FB90039C6DF /* BamOnGitHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BamOnGitHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9A95C4924B73FBA0039C6DF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C9A95C4B24B73FBA0039C6DF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C9A95C4D24B73FBA0039C6DF /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		C9A95C4F24B73FBA0039C6DF /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		C9A95C4D24B73FBA0039C6DF /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		C9A95C4F24B73FBA0039C6DF /* FavViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavViewController.swift; sourceTree = "<group>"; };
 		C9A95C5224B73FBA0039C6DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C9A95C5524B73FBA0039C6DF /* BamOnGitHub.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BamOnGitHub.xcdatamodel; sourceTree = "<group>"; };
 		C9A95C5724B73FBB0039C6DF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -61,6 +63,8 @@
 		C9A95C8D24B744CC0039C6DF /* License.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = License.swift; sourceTree = "<group>"; };
 		C9A95C8E24B744CC0039C6DF /* GitHubRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubRepository.swift; sourceTree = "<group>"; };
 		C9A95C8F24B744CD0039C6DF /* Permissions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Permissions.swift; sourceTree = "<group>"; };
+		C9A95C9524B746930039C6DF /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		C9A95C9724B746B10039C6DF /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +125,7 @@
 				C9A95C5924B73FBB0039C6DF /* LaunchScreen.storyboard */,
 				C9A95C5C24B73FBB0039C6DF /* Info.plist */,
 				C9A95C5424B73FBA0039C6DF /* BamOnGitHub.xcdatamodeld */,
+				C9A95C9724B746B10039C6DF /* Config.swift */,
 			);
 			path = BamOnGitHub;
 			sourceTree = "<group>";
@@ -157,8 +162,8 @@
 		C9A95C8B24B744B50039C6DF /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				C9A95C4D24B73FBA0039C6DF /* FirstViewController.swift */,
-				C9A95C4F24B73FBA0039C6DF /* SecondViewController.swift */,
+				C9A95C4D24B73FBA0039C6DF /* HomeViewController.swift */,
+				C9A95C4F24B73FBA0039C6DF /* FavViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -166,6 +171,7 @@
 		C9A95C9424B7459B0039C6DF /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				C9A95C9524B746930039C6DF /* APIClient.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -304,10 +310,12 @@
 				C9A95C9124B744CD0039C6DF /* License.swift in Sources */,
 				C9A95C5624B73FBA0039C6DF /* BamOnGitHub.xcdatamodeld in Sources */,
 				C9A95C9024B744CD0039C6DF /* Owner.swift in Sources */,
-				C9A95C5024B73FBA0039C6DF /* SecondViewController.swift in Sources */,
+				C9A95C9624B746930039C6DF /* APIClient.swift in Sources */,
+				C9A95C9824B746B10039C6DF /* Config.swift in Sources */,
+				C9A95C5024B73FBA0039C6DF /* FavViewController.swift in Sources */,
 				C9A95C9324B744CD0039C6DF /* Permissions.swift in Sources */,
 				C9A95C9224B744CD0039C6DF /* GitHubRepository.swift in Sources */,
-				C9A95C4E24B73FBA0039C6DF /* FirstViewController.swift in Sources */,
+				C9A95C4E24B73FBA0039C6DF /* HomeViewController.swift in Sources */,
 				C9A95C4A24B73FBA0039C6DF /* AppDelegate.swift in Sources */,
 				C9A95C4C24B73FBA0039C6DF /* SceneDelegate.swift in Sources */,
 			);

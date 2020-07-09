@@ -9,12 +9,19 @@
 import UIKit
 
 class HomeViewController: UIViewController {
-
+    
+    /**
+     call function from the API
+     */
+    let api = APIClient()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        api.getRepositories() { (data: [GitHubRepository]) in
+            print(data)
+        }
     }
-
-
+    
+    
 }
 
